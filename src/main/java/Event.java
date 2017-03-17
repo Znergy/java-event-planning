@@ -31,9 +31,9 @@ public class Event {
     return this.foodBeingServed.size();
   }
 
-  // public int getAmountOfDrinks() {
-  //   return this.drinksBeingServed.size();
-  // }
+  public int getAmountOfDrinks() {
+    return this.drinksBeingServed.size();
+  }
 
   public List<String> getDrinksBeingServed() {
     return this.drinksBeingServed;

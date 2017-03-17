@@ -69,5 +69,15 @@ public class EventTest {
     assertEquals(3, event.getAmountOfFood());
   }
 
+  // Seventh test (getter for amountOfDrinks)
+  @Test
+  public void getAmountOfDrinks_returnsAmountOfDrinks_5() {
+    List<String> food = new ArrayList<String>();
+    List<String> drink = new ArrayList<String>();
+    drink.addAll(Arrays.asList("tea", "pepsi", "coke", "sprite", "gatorade"));
+    Event event = new Event(10, food, drink, "Band");
+    assertEquals(5, event.getAmountOfDrinks());
+  }
+
 
 }
