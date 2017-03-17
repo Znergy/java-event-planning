@@ -22,4 +22,22 @@ public class EventTest {
     Event event = new Event(10, food, drink, "Band");
     assertEquals(10, event.getGuests());
   }
+
+  // Third test (getter for foodBeingServed)
+  @Test
+  public void getFoodBeingServed_returnsList_true() {
+    List<String> food = new ArrayList<String>();
+    List<String> drink = new ArrayList<String>();
+    food.add("chicken");
+    Event event = new Event(10, food, drink, "Band");
+    List<String> foodResult = new ArrayList<String>();
+    foodResult = event.getFoodBeingServed();
+    int size = foodResult.size();
+    assertEquals(1, size);
+  }
+
+
+
+
+
 }

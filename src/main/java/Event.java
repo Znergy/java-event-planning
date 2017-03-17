@@ -23,6 +23,14 @@ public class Event {
     return this.numberOfGuests;
   }
 
+  public List<String> getFoodBeingServed() {
+    return this.foodBeingServed;
+  }
+
+  // public int getGuests() {
+  //   return this.numberOfGuests;
+  // }
+
 
 
 }
