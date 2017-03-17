@@ -49,6 +49,15 @@ public class EventTest {
     assertEquals(1, size);
   }
 
+  // Fourth test (getter for typeOfEntertainment)
+  @Test
+  public void getTypeOfEntertainment_returnsEntertainment_Band() {
+    List<String> food = new ArrayList<String>();
+    List<String> drink = new ArrayList<String>();
+    Event event = new Event(10, food, drink, "Band");
+    assertEquals("Band", event.getTypeOfEntertainment());
+  }
+
 
 
 }

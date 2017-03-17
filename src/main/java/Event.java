@@ -31,6 +31,10 @@ public class Event {
     return this.drinksBeingServed;
   }
 
+  public String getTypeOfEntertainment() {
+    return this.typeOfEntertainment;
+  }
+
 
 
 }
