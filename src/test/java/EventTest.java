@@ -79,5 +79,17 @@ public class EventTest {
     assertEquals(5, event.getAmountOfDrinks());
   }
 
+  // Eightth test (getPrice method)
+  // tested passing "food", "drinks", "all", and else for catching wrong input
+  @Test
+  public void getPrice_returnsTotalforDrinks_() {
+    List<String> food = new ArrayList<String>();
+    food.addAll(Arrays.asList("queso", "hot dog", "chicken", "steak", "chips"));
+    List<String> drink = new ArrayList<String>();
+    drink.addAll(Arrays.asList("tea", "pepsi", "coke", "sprite", "gatorade"));
+    Event event = new Event(20, food, drink, "DJ Walrus");
+    assertEquals(200, event.getPrice("food"));
+  }
+
 
 }

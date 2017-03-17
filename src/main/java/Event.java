@@ -43,6 +43,24 @@ public class Event {
     return this.typeOfEntertainment;
   }
 
+  public int getPrice(String name) {
+    int drinkTotal = (getAmountOfDrinks() * 2) + getGuests();
+    int foodTotal = (getAmountOfFood() * 2) * getGuests();
+    int entertainmentTotal = 100;
+
+    if (name.equals("food")) {
+      return foodTotal;
+    } else if (name.equals("drinks")) {
+      return drinkTotal;
+    } else if (name.equals("entertainment")) {
+      return entertainmentTotal;
+    } else if (name.equals("all")) {
+      return drinkTotal + foodTotal + entertainmentTotal;
+    } else {
+      return -1;
+    }
+  }
+
 
 
 }
