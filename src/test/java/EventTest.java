@@ -25,7 +25,7 @@ public class EventTest {
 
   // Third test (getter for foodBeingServed)
   @Test
-  public void getFoodBeingServed_returnsList_true() {
+  public void getFoodBeingServed_returnsListSize_1() {
     List<String> food = new ArrayList<String>();
     List<String> drink = new ArrayList<String>();
     food.add("chicken");
@@ -36,7 +36,18 @@ public class EventTest {
     assertEquals(1, size);
   }
 
-
+  // Third test (getter for foodBeingServed)
+  @Test
+  public void getDrinksBeingServed_returnsListSize_1() {
+    List<String> food = new ArrayList<String>();
+    List<String> drink = new ArrayList<String>();
+    drink.add("Pepsi");
+    Event event = new Event(10, food, drink, "Band");
+    List<String> drinkResult = new ArrayList<String>();
+    drinkResult = event.getDrinksBeingServed();
+    int size = drinkResult.size();
+    assertEquals(1, size);
+  }
 
 
 

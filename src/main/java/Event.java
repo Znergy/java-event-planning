@@ -27,9 +27,9 @@ public class Event {
     return this.foodBeingServed;
   }
 
-  // public int getGuests() {
-  //   return this.numberOfGuests;
-  // }
+  public List<String> getDrinksBeingServed() {
+    return this.drinksBeingServed;
+  }
 
 
 
