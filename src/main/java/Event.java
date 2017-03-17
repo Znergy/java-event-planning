@@ -10,6 +10,7 @@ public class Event {
   private List<String> foodBeingServed;
   private List<String> drinksBeingServed;
   private String typeOfEntertainment;
+  private int totalPrice;
 
 
   public Event(int numberOfGuests, List<String> foodBeingServed, List<String> drinksBeingServed, String typeOfEntertainment) {
@@ -17,6 +18,7 @@ public class Event {
       this.foodBeingServed = foodBeingServed;
       this.drinksBeingServed = drinksBeingServed;
       this.typeOfEntertainment = typeOfEntertainment;
+      this.totalPrice = 0;
   }
 
   public int getGuests() {
@@ -49,16 +51,17 @@ public class Event {
     int entertainmentTotal = 100;
 
     if (name.equals("food")) {
-      return foodTotal;
+      totalPrice = foodTotal;
     } else if (name.equals("drinks")) {
-      return drinkTotal;
+      totalPrice = drinkTotal;
     } else if (name.equals("entertainment")) {
-      return entertainmentTotal;
+      totalPrice = entertainmentTotal;
     } else if (name.equals("all")) {
-      return drinkTotal + foodTotal + entertainmentTotal;
+      totalPrice = drinkTotal + foodTotal + entertainmentTotal;
     } else {
-      return -1;
+      totalPrice = -1;
     }
+    return totalPrice;
   }
 
   public void printDetails() {
@@ -78,6 +81,8 @@ public class Event {
       System.out.println("No entertainment choosen");
     }
   }
+
+
 
 
 }
