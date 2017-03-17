@@ -19,9 +19,9 @@ public class Event {
       this.typeOfEntertainment = typeOfEntertainment;
   }
 
-  // public int getGuests() {
-  //   return this.numberOfGuests;
-  // }
+  public int getGuests() {
+    return this.numberOfGuests;
+  }
 
 
 
