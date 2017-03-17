@@ -61,6 +61,23 @@ public class Event {
     }
   }
 
+  public void printDetails() {
+    System.out.println("*********");
+    System.out.println("Guests Attending: " + this.numberOfGuests);
+    System.out.println("Food being served: ");
+    for (int i=1; i <= this.foodBeingServed.size(); i++) {
+      System.out.println("Food choice #" + i + ": " + this.foodBeingServed.get(i));
+    }
+    System.out.println("Drinks being served: ");
+    for (int i=1; i <= this.drinksBeingServed.size(); i++) {
+      System.out.println("Drink choice #" + i + ": " + this.drinksBeingServed.get(i));
+    }
+    if (!this.typeOfEntertainment.equals("")) {
+      System.out.println("Entertainment choice: " + this.typeOfEntertainment);
+    } else {
+      System.out.println("No entertainment choosen");
+    }
+  }
 
 
 }
