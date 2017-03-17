@@ -2,6 +2,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class EventTest {
 
@@ -36,7 +37,7 @@ public class EventTest {
     assertEquals(1, size);
   }
 
-  // Third test (getter for foodBeingServed)
+  // Fourth test (getter for foodBeingServed)
   @Test
   public void getDrinksBeingServed_returnsListSize_1() {
     List<String> food = new ArrayList<String>();
@@ -49,7 +50,7 @@ public class EventTest {
     assertEquals(1, size);
   }
 
-  // Fourth test (getter for typeOfEntertainment)
+  // Fifth test (getter for typeOfEntertainment)
   @Test
   public void getTypeOfEntertainment_returnsEntertainment_Band() {
     List<String> food = new ArrayList<String>();
@@ -58,6 +59,15 @@ public class EventTest {
     assertEquals("Band", event.getTypeOfEntertainment());
   }
 
+  // Sixth test (getter for amountOfFood)
+  @Test
+  public void getAmountOfFood_returnsAmountOfFood_3() {
+    List<String> food = new ArrayList<String>();
+    food.addAll(Arrays.asList("soup", "salad", "steak"));
+    List<String> drink = new ArrayList<String>();
+    Event event = new Event(10, food, drink, "Band");
+    assertEquals(3, event.getAmountOfFood());
+  }
 
 
 }
