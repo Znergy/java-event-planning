@@ -13,6 +13,10 @@ public class Event {
   private int totalPrice;
 
   public Event() {
+    this.numberOfGuests = 0;
+    this.foodBeingServed = new ArrayList<String>();
+    this.drinksBeingServed = new ArrayList<String>();
+    this.typeOfEntertainment = "";
     this.totalPrice = 0;
   }
 
@@ -30,6 +34,36 @@ public class Event {
 
   public void setNumberOfGuests(int numberOfGuests) {
     this.numberOfGuests = numberOfGuests;
+  }
+
+  public void setFood(String food) {
+    this.foodBeingServed.add(food);
+  }
+
+  public void printFood() {
+    for(int i=0; i < this.foodBeingServed.size(); i++) {
+      int itemNumber = i + 1;
+      System.out.println(itemNumber + ") " + this.foodBeingServed.get(i));
+    }
+  }
+
+  public void printDrinks() {
+    for(int i=0; i < this.drinksBeingServed.size(); i++) {
+      int itemNumber = i + 1;
+      System.out.println(itemNumber + ") " + this.drinksBeingServed.get(i));
+    }
+  }
+
+  public void removeFood(int index) {
+    this.foodBeingServed.remove(index - 1);
+  }
+
+  public void removeDrink(int index) {
+    this.drinksBeingServed.remove(index - 1);
+  }
+
+  public void setDrink(String drink) {
+    this.drinksBeingServed.add(drink);
   }
 
   public int getGuests() {
@@ -76,21 +110,24 @@ public class Event {
   }
 
   public void printDetails() {
-    System.out.println("*********");
+    System.out.println("\n***********************\n");
     System.out.println("Guests Attending: " + this.numberOfGuests);
     System.out.println("Food being served: ");
-    for (int i=1; i <= this.foodBeingServed.size(); i++) {
-      System.out.println("Food choice #" + i + ": " + this.foodBeingServed.get(i));
+    for (int i=0; i < this.foodBeingServed.size(); i++) {
+      int itemNumber = i + 1;
+      System.out.println(itemNumber + ") " + this.foodBeingServed.get(i));
     }
     System.out.println("Drinks being served: ");
-    for (int i=1; i <= this.drinksBeingServed.size(); i++) {
-      System.out.println("Drink choice #" + i + ": " + this.drinksBeingServed.get(i));
+    for (int i=0; i < this.drinksBeingServed.size(); i++) {
+      int itemNumber = i + 1;
+      System.out.println(itemNumber + ") " + this.drinksBeingServed.get(i));
     }
     if (!this.typeOfEntertainment.equals("")) {
       System.out.println("Entertainment choice: " + this.typeOfEntertainment);
     } else {
       System.out.println("No entertainment choosen");
     }
+    System.out.println("\n***********************\n");
   }
 
 
