@@ -12,6 +12,9 @@ public class Event {
   private String typeOfEntertainment;
   private int totalPrice;
 
+  public Event() {
+    this.totalPrice = 0;
+  }
 
   public Event(int numberOfGuests, List<String> foodBeingServed, List<String> drinksBeingServed, String typeOfEntertainment) {
       this.numberOfGuests = numberOfGuests;
@@ -19,6 +22,14 @@ public class Event {
       this.drinksBeingServed = drinksBeingServed;
       this.typeOfEntertainment = typeOfEntertainment;
       this.totalPrice = 0;
+  }
+
+  public void setEntertainment(String typeOfEntertainment) {
+    this.typeOfEntertainment = typeOfEntertainment;
+  }
+
+  public void setNumberOfGuests(int numberOfGuests) {
+    this.numberOfGuests = numberOfGuests;
   }
 
   public int getGuests() {
