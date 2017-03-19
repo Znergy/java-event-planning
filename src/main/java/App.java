@@ -14,7 +14,8 @@ public class App {
       boolean isDoneWithFood = false;
       boolean isDoneWithDrinks = false;
       boolean isDoneWithEntertainment = false;
-      System.out.println("Type 'guests', 'food', 'drinks', 'entertainment', 'print' or 'quit'.");
+      boolean isDoneWithPrice = false;
+      System.out.println("Type 'guests', 'food', 'drinks', 'entertainment', 'price', 'print' or 'quit'.");
       String choice = myConsole.readLine();
       if(choice.equals("quit")) {
         System.out.println("Thanks, have a good day!");
@@ -48,7 +49,7 @@ public class App {
             isDoneWithFood = true;
           } else if(foodChoice.equals("print")) {
             if (event.getAmountOfFood() == 0) {
-              System.out.print("Sorry, nothing to print. \n");
+              System.out.println("Sorry, nothing to print. \n");
             } else {
               event.printFood();
             }
@@ -79,7 +80,7 @@ public class App {
             isDoneWithDrinks = true;
           } else if(drinkChoice.equals("print")) {
             if (event.getAmountOfDrinks() == 0) {
-              System.out.print("Sorry, nothing to print. \n");
+              System.out.println("Sorry, nothing to print. \n");
             } else {
               event.printDrinks();
             }
@@ -113,8 +114,33 @@ public class App {
         }
       } else if (choice.equals("print")) {
         event.printDetails();
+      } else if (choice.equals("price")) {
+        int totalPrice;
+        System.out.println("\n***** Price *****");
+        while(!isDoneWithPrice) {
+          System.out.println("For specific pricing type 'food', 'drinks', or 'entertainment'. For total price type 'all'. Type 'back' to return to the main option menu.");
+          String priceChoice = myConsole.readLine();
+          if(priceChoice.equals("food")) {
+            totalPrice = event.getPrice(priceChoice);
+            System.out.println("Food Total: " + "$" + totalPrice);
+          } else if(priceChoice.equals("drinks")) {
+            totalPrice = event.getPrice(priceChoice);
+            System.out.println("Drinks Total: " + "$" + totalPrice);
+          } else if(priceChoice.equals("entertainment")) {
+            totalPrice = event.getPrice(priceChoice);
+            System.out.println("Entertainment Total: " + "$" + totalPrice);
+          } else if(priceChoice.equals("all")) {
+            totalPrice = event.getPrice(priceChoice);
+            System.out.println("Complete Total: " + "$" + totalPrice);
+          } else if(priceChoice.equals("back")) {
+            System.out.println("Thanks, choose another option.");
+            isDoneWithPrice = true;
+          } else {
+            System.out.println("Invalid Input.");
+          }
+        }
       } else {
-        System.out.print("Invalid Input.");
+        System.out.println("Invalid Input.");
       }
     }
   }
